@@ -6,8 +6,8 @@ def jogar_rodada(jogador, tabuleiro):
             coluna = jogada % 3
             if tabuleiro[linha][coluna] == ' ':
                 tabuleiro[linha][coluna] = jogador
-                break
+                return jogada 
             else:
                 print('Posição já ocupada, tente novamente!')
         except (ValueError, IndexError):
-            print('Entrada inválida, escolha um número entre 1 e 9.')
+            print('Entrada inválida, deve ser escolhido um número entre 1 e 9.')
