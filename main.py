@@ -20,6 +20,7 @@ def main():
 
         comando = input('Digite "sair" para encerrar ou pressione Enter para continuar: ').strip().lower()
         if comando == 'sair':
+            print("Jogo finalizado! Espero que tenham se divertido.")
             break
 
         tabuleiro = inicializar_tabuleiro()
@@ -33,12 +34,12 @@ def main():
 
             if verificar_vitoria(tabuleiro, simbolos[turno]):
                 exibir_tabuleiro(tabuleiro)
-                print(f'Jogador {jogadores[turno]} venceu esta rodada!')
+                print(f'Jogador {jogadores[turno]} venceu esta rodada, parabéns!')
                 placar[turno] += 1
                 break
             elif verificar_empate(tabuleiro):
                 exibir_tabuleiro(tabuleiro)
-                print('Empate!')
+                print('Empate! Quem sabe na próxima né.')
                 break
 
             turno = 1 - turno 
@@ -46,7 +47,6 @@ def main():
         historico_partidas.append((tabuleiro, historico_jogo))
 
     salvar_resultado(nome_jogador1, nome_jogador2, placar, historico_partidas)
-    print("Jogo finalizado! Placar e histórico salvos.")
 
 if __name__ == '__main__':
     main()
